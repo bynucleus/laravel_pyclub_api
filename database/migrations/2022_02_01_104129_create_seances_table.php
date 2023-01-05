@@ -15,8 +15,11 @@ class CreateSeancesTable extends Migration
     {
         Schema::create('seances', function (Blueprint $table) {
             $table->id();
+            $table->string('titre')->nullable();
+
             $table->string('date');
-           
+
+            $table->string('club')->nullable();
             $table->timestamps();
         });
     }

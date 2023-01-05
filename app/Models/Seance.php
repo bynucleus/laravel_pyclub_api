@@ -7,8 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seance extends Model
 {
+    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
     protected $fillable = [
-        "date"
+        "titre",
+        "date",
+        "club",
     ];
 }

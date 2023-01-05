@@ -21,6 +21,7 @@ class CreateMissionsTable extends Migration
             $table->string('debut');
             $table->string('fin');
             $table->string('pcc');
+            $table->string('club')->nullable();
 
             $table->timestamps();
         });

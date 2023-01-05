@@ -17,6 +17,7 @@ class CreateRessourcesTable extends Migration
             $table->id();
             $table->string('titre');
             $table->string('lien');
+            $table->string('club')->nullable();
 
             $table->timestamps();
         });

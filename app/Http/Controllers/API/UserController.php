@@ -16,7 +16,15 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $club = request()->club;
+        print($club);
+        // if($club){
+            // $users = User::where("club",$club)->get();
+        // }
+        // else{
+
+            $users = User::all();
+        // }
 
     // On retourne les informations des utilisateurs en JSON
     return response()->json($users);
@@ -29,7 +37,7 @@ class UserController extends Controller
             $success['token'] = $user->createToken('appToken')->accessToken;
            //After successfull authentication, notice how I return json parameters
             return response()->json([
-              'success' => true,    
+              'success' => true,
               'token' => $success,
               'user' => $user
           ]);
@@ -41,7 +49,7 @@ class UserController extends Controller
             'success' => false,
             'message' => 'mauvais mot de passe',
         ], 401);
-      
+
        }
        else{
 
@@ -89,14 +97,15 @@ class UserController extends Controller
             'success' => false,
             'message' => 'un membre existe deja avec ce mail',
         ], 401);
-      
+
        }
        else{
     $user = User::create([
         'name' => $request->name,
-        'prenom' => $request->prenom,
-        'pcc' => "0",
+        // 'prenom' => $request->prenom,
+        'pcc' => "50",
         'niveau' => $request->niveau,
+        'club' => $request->club,
         'email' => $request->email,
         'password' => bcrypt($request->password),
         // 'profileImage' => "images/avatar.png",
@@ -108,7 +117,7 @@ class UserController extends Controller
       'user' => $user
   ]);
        }
-    
+
 
     // On retourne les informations du nouvel utilisateur en JSON
     // return response()->json($user, 201);
@@ -163,6 +172,20 @@ class UserController extends Controller
         return response()->json($user);
 
     }
+    // public function getPcc(Request $request)
+    // {
+    //     $user =[];
+    //     $ex = User::where('id',$request->user_id)->first();
+    //     if($ex) {
+    //         $pcc=intval($ex->pcc)+intval($request->pcc);
+    //         $ex->update([
+    //             "pcc"=>$pcc,
+    //         ]);
+    //         $user=$ex;
+    //     }
+    //     return response()->json($user);
+
+    // }
     /**
      * Update the specified resource in storage.
      *
@@ -178,10 +201,11 @@ class UserController extends Controller
     // On modifie les informations de l'utilisateur
     $user->update([
         'name' => $request->name,
-        'prenom' => $request->prenom,
+        // 'prenom' => $request->prenom,
         'pcc' => $request->pcc,
         'niveau' => $request->niveau,
         'email' => $request->email,
+        'club' => $request->club,
         'password' => bcrypt($request->password)
     ]);
 
