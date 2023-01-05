@@ -22,7 +22,7 @@ class MissionsTableSeeder extends Seeder
             0 => 
             array (
                 'classe' => 'Z',
-                'club' => NULL,
+                'club' => 'python',
                 'created_at' => '2022-02-01 16:23:27',
                 'debut' => '25-01-22',
                 'description' => 'il s\'agit dans ce projet de réaliser un script ouvrant l\'invite de commande avec une couleur de texte précisé par l\'utilisateur',
@@ -30,7 +30,7 @@ class MissionsTableSeeder extends Seeder
                 'id' => 2,
                 'lien' => 'https://nucleus.eblackci.com/page.unamed/document?id=88',
                 'pcc' => '1100',
-                'updated_at' => NULL,
+                'updated_at' => '2023-01-05 17:52:22',
             ),
         ));
         
