@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SeancesTableSeeder::class);
         $this->call(NotesTableSeeder::class);
         $this->call(ListePresencesTableSeeder::class);
+        $this->call(ClubsTableSeeder::class);
+        $this->call(PasswordResetsTableSeeder::class);
     }
 }

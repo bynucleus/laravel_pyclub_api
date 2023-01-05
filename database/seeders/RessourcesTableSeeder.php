@@ -21,10 +21,11 @@ class RessourcesTableSeeder extends Seeder
         \DB::table('ressources')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'titre' => 'faq python devoppez.com',
-                'lien' => 'https://python.developpez.com/faq/?page=Generalites',
+                'club' => NULL,
                 'created_at' => '2022-02-02 12:51:15',
+                'id' => 1,
+                'lien' => 'https://python.developpez.com/faq/?page=Generalites',
+                'titre' => 'faq python devoppez.com',
                 'updated_at' => NULL,
             ),
         ));

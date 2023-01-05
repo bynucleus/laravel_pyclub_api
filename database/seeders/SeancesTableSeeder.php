@@ -21,23 +21,29 @@ class SeancesTableSeeder extends Seeder
         \DB::table('seances')->insert(array (
             0 => 
             array (
-                'id' => 1,
-                'date' => '15-01-22',
+                'club' => NULL,
                 'created_at' => '2022-02-02 20:25:28',
+                'date' => '15-01-22',
+                'id' => 1,
+                'titre' => NULL,
                 'updated_at' => NULL,
             ),
             1 => 
             array (
-                'id' => 2,
-                'date' => '29-01-22',
+                'club' => NULL,
                 'created_at' => '2022-02-02 20:25:46',
+                'date' => '29-01-22',
+                'id' => 2,
+                'titre' => NULL,
                 'updated_at' => NULL,
             ),
             2 => 
             array (
-                'id' => 3,
-                'date' => '05-02-2022',
+                'club' => NULL,
                 'created_at' => NULL,
+                'date' => '05-02-2022',
+                'id' => 3,
+                'titre' => NULL,
                 'updated_at' => NULL,
             ),
         ));
