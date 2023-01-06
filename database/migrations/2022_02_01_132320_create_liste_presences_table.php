@@ -20,6 +20,7 @@ class CreateListePresencesTable extends Migration
 
             // $table->unsignedBigInteger('user_id')->unsigned();
             // $table->foreign('user_id')->references('id')->on('users');
+            $table->string('club')->nullable();
             $table->string('date')->nullable();
             $table->string('nom');
 
