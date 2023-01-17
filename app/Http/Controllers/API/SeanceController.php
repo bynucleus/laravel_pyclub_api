@@ -15,7 +15,7 @@ class SeanceController extends Controller
      */
     public function index()
     {
-        $seance = Seance::latest()->all();
+        $seance = Seance::latest()->get();
 
         // On retourne les informations des utilisateurs en JSON
         return response()->json($seance);

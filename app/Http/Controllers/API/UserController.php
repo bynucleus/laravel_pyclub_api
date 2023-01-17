@@ -23,7 +23,7 @@ class UserController extends Controller
         // }
         // else{
 
-            $users = User::latest()->all();
+            $users = User::latest()->get();
         // }
 
     // On retourne les informations des utilisateurs en JSON

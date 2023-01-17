@@ -16,7 +16,7 @@ class ListePresenceController extends Controller
      */
     public function index()
     {
-        $liste = ListePresence::latest()->all();
+        $liste = ListePresence::latest()->get();
 
         // On retourne les informations des utilisateurs en JSON
         return response()->json($liste);
