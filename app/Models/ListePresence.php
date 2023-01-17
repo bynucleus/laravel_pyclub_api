@@ -15,4 +15,9 @@ class ListePresence extends Model
         'date',
 
     ];
+
+    public function openPresence($crud = false)
+    {
+        return '<a class="btn btn-xs btn-primary"  href="admin/add-presence" data-toggle="tooltip" title="">Presence <i class="la la-link"></i> </a>';
+    }
 }

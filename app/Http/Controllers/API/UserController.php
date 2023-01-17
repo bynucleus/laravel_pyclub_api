@@ -29,6 +29,21 @@ class UserController extends Controller
     // On retourne les informations des utilisateurs en JSON
     return response()->json($users);
     }
+    public function userByClub($club)
+    {
+        // $club = request()->club;
+
+        // if($club){
+            // $users = User::where("club",$club)->get();
+        // }
+        // else{
+
+            $users = User::where("club",$club)->get();
+        // }
+
+    // On retourne les informations des utilisateurs en JSON
+    return response()->json($users);
+    }
 
     public function login()
     {

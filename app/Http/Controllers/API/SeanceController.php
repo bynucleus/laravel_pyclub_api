@@ -21,6 +21,18 @@ class SeanceController extends Controller
         return response()->json($seance);
     }
 
+
+    public function seanceByClub($club)
+    {
+
+
+            $seances = Seance::where("club",$club)->get();
+
+
+    // On retourne les informations des utilisateurs en JSON
+    return response()->json($seances);
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -34,7 +46,7 @@ class SeanceController extends Controller
 
             $seance=Seance::create([
             'date' => date("d-m-Y"),
-            
+
         ]);
     }
         return response()->json($seance, 201);
@@ -49,7 +61,7 @@ class SeanceController extends Controller
     public function show(Seance $seance)
     {
         return response()->json($seance);
-        
+
     }
 
     /**

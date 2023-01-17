@@ -24,4 +24,7 @@ Route::group([
     Route::crud('liste-presence', 'ListePresenceCrudController');
     Route::crud('note', 'NoteCrudController');
     Route::crud('club', 'ClubCrudController');
+
+    Route::get('admin/add-presence', 'ClubCrudController@add_presence');
+
 }); // this should be the absolute last line of this file

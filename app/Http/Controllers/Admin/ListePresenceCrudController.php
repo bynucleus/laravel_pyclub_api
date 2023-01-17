@@ -29,6 +29,8 @@ class ListePresenceCrudController extends CrudController
         CRUD::setModel(\App\Models\ListePresence::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/liste-presence');
         CRUD::setEntityNameStrings('liste presence', 'liste presences');
+        $this->crud->denyAccess('create');
+        $this->crud->addButtonFromModelFunction('top', 'open_presence', 'openPresence', 'beginning');
     }
 
     /**
@@ -86,7 +88,7 @@ class ListePresenceCrudController extends CrudController
                 'attribute' => 'date',
 
             ]
-        );  
+        );
         // CRUD::field('seance_id');
         CRUD::field('date');
 

@@ -81,4 +81,9 @@ class ClubCrudController extends CrudController
     {
         $this->setupCreateOperation();
     }
+    public function add_presence()
+    {
+        $clubs = \DB::table("clubs")->get();
+        return view("vendor.backpack.base.add_presence", compact("clubs"));
+    }
 }

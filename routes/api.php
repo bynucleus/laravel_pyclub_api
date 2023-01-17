@@ -26,6 +26,8 @@ Route::apiResource("listes", ListePresenceController::class);
 Route::get("user", [UserController::class,"showByMail"]);
 Route::post("login", [UserController::class,"login"]);
 Route::post("user/pcc", [UserController::class,"setPcc"]);
+Route::get("user/{club}", [UserController::class,"userByClub"]);
+Route::get("seance/{club}", [SeanceController::class,"seanceByClub"]);
 Route::post("user/avatar", [UserController::class,"setAvatar"]);
 Route::apiResource("missions", MissionController::class);
 Route::apiResource("ressources", RessourceController::class);
@@ -33,6 +35,7 @@ Route::apiResource("seances", SeanceController::class);
 Route::apiResource("notes", NoteController::class);
 Route::get("note/{seanceid}", [NoteController::class,"showBySeance"]);
 Route::get("liste/{seanceid}", [ListePresenceController::class,"showBySeance"]);
+Route::post("add-presence", [ListePresenceController::class,"addPresence"]);
 
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
