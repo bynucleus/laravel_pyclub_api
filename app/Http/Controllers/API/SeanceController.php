@@ -26,7 +26,7 @@ class SeanceController extends Controller
     {
 
 
-            $seances = Seance::where("club",$club)->get();
+            $seances = Seance::where("club",$club)->latest()->get();
 
 
     // On retourne les informations des utilisateurs en JSON
