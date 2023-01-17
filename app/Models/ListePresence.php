@@ -10,11 +10,10 @@ class ListePresence extends Model
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
     protected $fillable = [
+        'club',
         'nom',
         'seance_id',
         'date',
-        'club',
-
     ];
 
     public function openPresence($crud = false)
