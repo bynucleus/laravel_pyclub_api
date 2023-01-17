@@ -13,6 +13,7 @@ class ListePresence extends Model
         'nom',
         'seance_id',
         'date',
+        'club',
 
     ];
 
