@@ -20,4 +20,15 @@ class Mission extends Model
         'created_at',
 
     ];
+
+    public function setLienAttribute($value)
+    {
+        $attribute_name = "lien";
+        $disk = "docs";
+        $destination_path = "documents";
+
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path, $fileName = null);
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
 }
